@@ -20,14 +20,13 @@ public class Main {
         }
 
         sb.append("<");
-        while(!q.isEmpty()) {
-            for(int i=1; i<K; i++) {
+        while(q.size() > 1) {
+            for(int i=0; i<K-1; i++) {
                 q.add(q.poll());
             }
-
-            if(q.size() == 1) sb.append(q.poll()).append(">");
-            else sb.append(q.poll()).append(", ");
+            sb.append(q.poll()).append(", ");
         }
+        sb.append(q.poll()).append(">");
 
         System.out.println(sb);
     }
