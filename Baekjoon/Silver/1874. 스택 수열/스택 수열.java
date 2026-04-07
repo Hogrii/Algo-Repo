@@ -19,7 +19,7 @@ public class Main {
                     sb.append("+").append("\n");
                 }
                 else {
-                    if(stack.peek() == target) {
+                    if(!stack.isEmpty() && stack.peek() == target) {
                         stack.pop();
                         sb.append("-").append("\n");
                         break;
