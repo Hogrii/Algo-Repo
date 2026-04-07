@@ -20,10 +20,8 @@ public class Main {
         int P = Integer.parseInt(st.nextToken());
 
         int tBundle = 0;
-        for(int i=0; i<shirts.length; i++) {
-            if(shirts[i] % T != 0) tBundle += (shirts[i] / T) + 1;
-            else tBundle += shirts[i] / T;
-        }
+        for(int shirt : shirts) tBundle += (shirt + T - 1) / T;
+
         sb.append(tBundle).append("\n");
         sb.append(N/P).append(" ").append(N%P);
 
