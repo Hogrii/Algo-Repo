@@ -17,14 +17,12 @@ public class Main {
         ArrayList<Integer> list = new ArrayList<>();
         Arrays.sort(arr);
 
-        double first = 0;
-
         // 산술평균
+        double sum = 0;
         for(int i=0; i<arr.length; i++) {
-            first += arr[i];
+            sum += arr[i];
         }
-        long finalAvg = Math.round(first/arr.length);
-        list.add((int)finalAvg);
+        list.add((int)Math.round(sum /arr.length));
 
         // 중앙값
         list.add(arr[arr.length/2]);
