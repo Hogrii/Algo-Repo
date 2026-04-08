@@ -2,7 +2,6 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    final private static int HASH_VALUE = 31;
     final private static long M = 1234567891;
 
     public static void main(String[] args) throws IOException {
@@ -12,9 +11,11 @@ public class Main {
         String str = br.readLine();
 
         long sum = 0;
+        long pow = 1;
         for(int i=0; i<L; i++) {
             int alphabet = str.charAt(i) - '`';
-            sum += (alphabet * Math.pow(HASH_VALUE, i)) % M;
+            sum = (sum + alphabet * pow) % M;
+            pow = (pow * 31) % M;
         }
 
         System.out.println(sum);
